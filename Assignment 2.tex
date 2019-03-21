@@ -188,16 +188,36 @@ Which is the same as:
 Since $\mathbf{a}^{T} \mathbf{a} - 2 \mathbf{a}^{T}\mathbf{b} + \mathbf{b}^{T} \mathbf{b} = \| \mathbf{a} - \mathbf{b} \|^{2}_{2} \geq 0$, $r^{2}$ is also greater or equal to zero. Hence, equation \ref{7} describe a ball, which is a convex set.
 
 \section*{Question 4}
-It is obvious that the probability distributions define a convex set $\mathcal{P}$, which satisfied, for any $\mathbf{p} \in \mathcal{P}$, $\| \mathbf{p} \| = 1$
+In this question, we firstly define the vector:
+\begin{equation}
+	\mathbf{x} = \begin{bmatrix}
+	a_{0} \\
+	a_{1} \\
+	\vdots \\
+	a_{n}
+	\end{bmatrix}
+	\label{9}
+\end{equation}
+Which contain all possible value that random variable $x$ may take. After that, the vector $\mathbf{p}$ which describe the probability distribution of $x$:
+\begin{equation}
+	\mathbf{p} = \begin{bmatrix}
+	p_{1} \\
+	p_{2} \\
+	\vdots \\
+	p_{n}
+	\end{bmatrix}
+	\label{10}
+\end{equation}
+Where the element $p_{i}$ within $\mathbf{p}$ corresponding to the probability that $x = a_{i}$. It is obvious that the set $\mathcal{P} = \{ \mathbf{p} |\, \| \mathbf{p} \| = 1 \textit{ and for each } p_{i} \textit{ within } \mathbf{p}, p_{i} \geq 0 \}$ is a convex set.
 
 \subsection*{(a)}
-Denote $f(x)$ in vector form as:
+Follow the definition used in \ref{9} and \ref{10}, we can define vector $\mathbf{f}$ as:
 \begin{equation*}
 	\mathbf{f} = \begin{bmatrix}
-	f(x_{1}) \\
-	f(x_{2}) \\
+	f(a_{1}) \\
+	f(a_{2}) \\
 	\vdots \\
-	f(x_{n})
+	f(a_{n})
 	\end{bmatrix}
 \end{equation*}
 The condition $\alpha \leq \mathcal{E}f(x) \leq \beta$ define a set $\mathcal{Q}$ which is a intersection of two half-space:
@@ -207,29 +227,108 @@ The condition $\alpha \leq \mathcal{E}f(x) \leq \beta$ define a set $\mathcal{Q}
 As a result, the set of $\mathbf{p}$ that satisfied the condition $\alpha \leq \mathcal{E}f(x) \leq \beta$ is the intersection of $\mathcal{P}$ and $\mathcal{Q}$, which produce a convex set.
 
 \subsection*{(b)}
-Denote the vector $\mathbf{x}$ as:
+We firstly define a indicator vector $\mathbf{i}$ as:
 \begin{equation*}
-	\mathbf{x} = \begin{bmatrix}
-	x_{1} \\
-	x_{2} \\
+	\mathbf{i} = \begin{bmatrix}
+	\mathbb{I}(a_{1} > \alpha) \\
+	\mathbb{I}(a_{2} > \alpha) \\
 	\vdots \\
-	x_{n}
+	\mathbb{I}(a_{n} > \alpha)
 	\end{bmatrix}
 \end{equation*}
-Which satisfied that for any $0 \leq i, j \leq n$, if $i < j$, then, $x_{i} < x_{j}$. Furthermore, we define vector $\tilde{\mathbf{x}}$ as:
+Where $\mathbb{I}(s)$ is defined as:
 \begin{equation*}
-	\tilde{\mathbf{x}} = \begin{bmatrix}
-	0 \\
+	\mathbb{I}(s) = 
+	\begin{cases}
+		1 & \quad \textit{if } s \textit{ is true} \\
+		0 & \quad \textit{otherwise}
+	\end{cases}
+\end{equation*} 
+Therefore, the constrain can be expressed as:
+\begin{equation*}
+	\mathbf{i}^{T} \mathbf{p} \leq \beta
+\end{equation*}
+Which obviously, define a half-space. Therefore, the set defined by this half-space: $\mathcal{Q} = \{ \mathbf{p} |\,  \mathbf{i}^{T} \mathbf{p} \leq \beta \}$ is a convex set. Consequently, the set of $\mathbf{p}$ that satisfied the constrain can be expressed as $\mathcal{P} \cap \mathcal{Q}$, which is convex.
+
+\subsection*{(c)}
+Let $f(x)$ in (a) equal to $x^{2}$. Hence, there is:
+\begin{equation*}
+	\mathbf{f} = \begin{bmatrix}
+	a_{1}^{2} \\
+	a_{2}^{2} \\
 	\vdots \\
-	x_{i} \\
-	x_{i + 1} \\
-	\vdots \\
-	x_{n}
+	a_{n}^{2}
 	\end{bmatrix}
 \end{equation*}
-In which, $x_{i}$ is the first element that greater than $\alpha$. Therefore, the set of $\mathbf{p}$ that satisfied the condition in this question can be expressed as:
+The constrain $\mathcal{E}x^{2} \geq \alpha$ can then be expressed as:
 \begin{equation*}
-	\mathcal{P} \cap \{ \mathbf{p} |\, \tilde{\mathbf{x}}^{T} \mathbf{p} \leq \beta \}
+	-\mathbf{f}^{T} \mathbf{p} \leq -\alpha
 \end{equation*}
-Which is a convex set.
+Which define a half-space. Hence, the set of $\mathbf{p}$ under this constrain is convex.
+
+\subsection*{(d)}
+Assume $\mathbf{x} = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}$, $\mathbf{p_{1}} = \begin{bmatrix}
+1 \\
+0
+\end{bmatrix}$ and $\mathbf{p_{2}} = \begin{bmatrix}
+0 \\
+1
+\end{bmatrix}$. Set $\alpha = 0.2$. Therefore, for $\mathbf{p_{1}}$, we have:
+\begin{equation*}
+	Var(\mathbf{x}) = 0 < 0.2
+\end{equation*}
+For $\mathbf{p_{2}}$, we have:
+\begin{equation*}
+	Var(\mathbf{x}) = 0 < 0.2
+\end{equation*}
+However, for $\mathbf{p_{3}} = 0.5 \mathbf{p_{1}} + 0.5 \mathbf{p_{2}}$, there is:
+\begin{equation*}
+	Var(\mathbf{x}) = 0.25 > 0.2
+\end{equation*}
+Hence, the set of $\mathbf{p}$ that satisfied this constrain is not convex.
+
+\section*{Question 5}
+\subsection*{(a)}
+As the function $f(\mathbf{x}, \mathbf{z})$ is convex over $\mathbf{x}$, it's Hessian Matrix over $\mathbf{x}$ is:
+\begin{equation*}
+	\mathcal{H}_{\mathbf{x}} = \begin{bmatrix}
+	\frac{\partial^{2} f}{\partial x_{1}^{2}} & \frac{\partial^{2} f}{\partial x_{1} x_{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{1} x_{n}} \\
+	\frac{\partial^{2} f}{\partial x_{2} x_{1}} & \frac{\partial^{2} f}{\partial x_{2}^{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{2} x_{n}} \\
+	\vdots & \vdots & \ddots & \vdots \\
+	\frac{\partial^{2} f}{\partial x_{n} x_{1}} & \frac{\partial^{2} f}{\partial x_{n} x_{2}} & \cdots & \frac{\partial^{2} f}{\partial x_{n}^{2}}
+	\end{bmatrix}
+\end{equation*}
+Which satisfied $\mathcal{H}_{\mathbf{x}} \succeq 0$. The Hessian Matrix of $f$ over $\mathbf{z}$: $\mathcal{H}_{\mathbf{z}}$ has the similar form as $\mathcal{H}_{\mathbf{x}}$ and satisfied: $\mathcal{H}_{\mathbf{z}} \preceq 0$. As a result, the Hessian Matrix over $\mathbf{x}$ and $\mathbf{z}$ should be:
+\begin{equation*}
+	\nabla^{2} f(\mathbf{x}, \mathbf{z}) = \begin{bmatrix}
+	\mathcal{H}_{\mathbf{x}} & \mathcal{H}_{\mathbf{z}} \\
+	\mathcal{H}_{\mathbf{z}} & \mathcal{H}_{\mathbf{x}}
+	\end{bmatrix}
+\end{equation*}
+
+\subsection*{(b)}
+Firstly, we fix $\mathbf{x} = \tilde{\mathbf{x}}$. Since $f$ is concave over $\mathbf{z}$ and $\nabla f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) = 0$, according to the first-order condition of concave function, we have, for any $\mathbf{z}$:
+\begin{equation}
+	f(\tilde{\mathbf{x}}, \mathbf{z}) < f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})
+	\label{11}
+\end{equation}
+In order to prove $f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) < f(\mathbf{x}, \tilde{\mathbf{z}})$. We fix $\mathbf{z} = \tilde{\mathbf{z}}$. Since $f$ is convex over $\mathbf{x}$, according to the first-order condition of convex function, there is:
+\begin{equation*}
+	f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) + \nabla f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) (\mathbf{x} - \tilde{\mathbf{x}}) < f(\mathbf{x}, \tilde{\mathbf{z}})
+\end{equation*}
+Since $\nabla f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) = 0$, we can prove that:
+\begin{equation*}
+	f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) < f(\mathbf{x}, \tilde{\mathbf{z}})
+\end{equation*}
+In order to prove that $\displaystyle\sup_{\mathbf{z}} \displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$. We first prove $\displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \mathbf{z})$: if this equation do not hold, which means, there exist a $\mathbf{x^{*}} \neq \tilde{\mathbf{x}}$ that minimize $f(\mathbf{x}, \mathbf{z})$ over $\mathbf{z}$, which means, $f(\mathbf{x}^{*}, \tilde{\mathbf{z}}) \leq f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$. However, this conflict with $f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) < f(\mathbf{x}, \tilde{\mathbf{z}})$. As a result, $\displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \mathbf{z})$. Furthermore, according to equation \ref{11}, there is:
+\begin{equation*}
+	\displaystyle\sup_{\mathbf{z}} f(\tilde{\mathbf{x}}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})
+\end{equation*}
+As a result, $\displaystyle\sup_{\mathbf{z}} \displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$. The similar method can be used  to prove $\displaystyle\inf_{\mathbf{x}}\sup_{\mathbf{z}} f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$
+
+\subsection*{(c)}
+
 \end{document}

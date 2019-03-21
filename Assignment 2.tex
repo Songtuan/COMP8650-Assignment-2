@@ -186,4 +186,50 @@ Which is the same as:
 	r^{2} = \frac{p(\mathbf{a}^{T} \mathbf{a} - 2 \mathbf{a}^{T} \mathbf{b} + \mathbf{b}^{T} \mathbf{b})}{(1 - p)^{2}}
 \end{equation*}
 Since $\mathbf{a}^{T} \mathbf{a} - 2 \mathbf{a}^{T}\mathbf{b} + \mathbf{b}^{T} \mathbf{b} = \| \mathbf{a} - \mathbf{b} \|^{2}_{2} \geq 0$, $r^{2}$ is also greater or equal to zero. Hence, equation \ref{7} describe a ball, which is a convex set.
+
+\section*{Question 4}
+It is obvious that the probability distributions define a convex set $\mathcal{P}$, which satisfied, for any $\mathbf{p} \in \mathcal{P}$, $\| \mathbf{p} \| = 1$
+
+\subsection*{(a)}
+Denote $f(x)$ in vector form as:
+\begin{equation*}
+	\mathbf{f} = \begin{bmatrix}
+	f(x_{1}) \\
+	f(x_{2}) \\
+	\vdots \\
+	f(x_{n})
+	\end{bmatrix}
+\end{equation*}
+The condition $\alpha \leq \mathcal{E}f(x) \leq \beta$ define a set $\mathcal{Q}$ which is a intersection of two half-space:
+\begin{equation*}
+	\mathcal{Q} = \{ \mathbf{p} |\, -\mathbf{f}^{T} \mathbf{p} \leq -\alpha \} \cap \{ \mathbf{p} |\, \mathbf{f}^{T} \mathbf{p} \leq \beta \}
+\end{equation*}
+As a result, the set of $\mathbf{p}$ that satisfied the condition $\alpha \leq \mathcal{E}f(x) \leq \beta$ is the intersection of $\mathcal{P}$ and $\mathcal{Q}$, which produce a convex set.
+
+\subsection*{(b)}
+Denote the vector $\mathbf{x}$ as:
+\begin{equation*}
+	\mathbf{x} = \begin{bmatrix}
+	x_{1} \\
+	x_{2} \\
+	\vdots \\
+	x_{n}
+	\end{bmatrix}
+\end{equation*}
+Which satisfied that for any $0 \leq i, j \leq n$, if $i < j$, then, $x_{i} < x_{j}$. Furthermore, we define vector $\tilde{\mathbf{x}}$ as:
+\begin{equation*}
+	\tilde{\mathbf{x}} = \begin{bmatrix}
+	0 \\
+	\vdots \\
+	x_{i} \\
+	x_{i + 1} \\
+	\vdots \\
+	x_{n}
+	\end{bmatrix}
+\end{equation*}
+In which, $x_{i}$ is the first element that greater than $\alpha$. Therefore, the set of $\mathbf{p}$ that satisfied the condition in this question can be expressed as:
+\begin{equation*}
+	\mathcal{P} \cap \{ \mathbf{p} |\, \tilde{\mathbf{x}}^{T} \mathbf{p} \leq \beta \}
+\end{equation*}
+Which is a convex set.
 \end{document}

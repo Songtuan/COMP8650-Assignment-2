@@ -330,5 +330,28 @@ In order to prove that $\displaystyle\sup_{\mathbf{z}} \displaystyle\inf_{\mathb
 As a result, $\displaystyle\sup_{\mathbf{z}} \displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$. The similar method can be used  to prove $\displaystyle\inf_{\mathbf{x}}\sup_{\mathbf{z}} f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$
 
 \subsection*{(c)}
+We firstly fix $\mathbf{x} = \tilde{\mathbf{x}}$. According to $f(\tilde{\mathbf{x}}, \mathbf{z}) \leq f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$, $f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$ is the maximum value of function $f(\tilde{\mathbf{x}}, \mathbf{z})$ over $\mathbf{z}$. Hence, there is:
+\begin{equation*}
+	\nabla_{\mathbf{x}} f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) = 0
+\end{equation*}
+Furthermore, we can identify that $f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$ is the minimum of $f(\mathbf{x}, \tilde{\mathbf{z}})$ over $\mathbf{x}$ when we fix $\mathbf{z} = \tilde{\mathbf{z}}$, there is:
+\begin{equation*}
+	\nabla_{\mathbf{z}} f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) = 0
+\end{equation*}
+Combine the above two equation, we have: $\nabla f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) = 0$
+
+\section*{Question 6}
+\subsection*{(a)}
+This function is convex and quasi-convex. Furthermore, this function is also quasi-concave but not concave.
+\subsection*{(b)}
+This function is neither convex nor concave as it's Hessian Matrix is not semi-definite or negative semi-definite. However, this function is quasi-convex but not quasi-concave.
+\subsection*{(c)}
+This function is convex and quasi-convex as it's Hessian Matrix is semi-definite. This function is neither concave nor quasi-concave.
+\subsection*{(d)}
+This function is neither convex nor concave. However, this function is both quasi-convex and quasi-concave.
+\subsection*{(e)}
+This function is convex and quasi-convex but not concave and quasi-concave.
+\subsection*{(f)}
+This function is concave and quasi-concave but not convex and quasi-convex.
 
 \end{document}

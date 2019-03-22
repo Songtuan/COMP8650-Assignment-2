@@ -323,11 +323,20 @@ Since $\nabla f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) = 0$, we can prove that:
 \begin{equation*}
 	f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) < f(\mathbf{x}, \tilde{\mathbf{z}})
 \end{equation*}
-In order to prove that $\displaystyle\sup_{\mathbf{z}} \displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$. We first prove $\displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \mathbf{z})$: if this equation do not hold, which means, there exist a $\mathbf{x^{*}} \neq \tilde{\mathbf{x}}$ that minimize $f(\mathbf{x}, \mathbf{z})$ over $\mathbf{z}$, which means, $f(\mathbf{x}^{*}, \tilde{\mathbf{z}}) \leq f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$. However, this conflict with $f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}}) < f(\mathbf{x}, \tilde{\mathbf{z}})$. As a result, $\displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \mathbf{z})$. Furthermore, according to equation \ref{11}, there is:
+
+Then, we start to prove $\displaystyle\sup_{\mathbf{z}} \displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$: For any $\mathbf{z}$, if $\displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\mathbf{x}^{*}, \mathbf{z})$, we have:
 \begin{equation*}
-	\displaystyle\sup_{\mathbf{z}} f(\tilde{\mathbf{x}}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})
+	f(\mathbf{x}^{*}, \mathbf{z}) \leq f(\tilde{\mathbf{x}}, \mathbf{z})
 \end{equation*}
-As a result, $\displaystyle\sup_{\mathbf{z}} \displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$. The similar method can be used  to prove $\displaystyle\inf_{\mathbf{x}}\sup_{\mathbf{z}} f(\mathbf{x}, \mathbf{z}) = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$
+Which means, $\displaystyle\inf_{\mathbf{x}}f(\mathbf{x}, \mathbf{z}) \leq f(\tilde{\mathbf{x}}, \mathbf{z})$. The equality hold when $\mathbf{x}^{*} = \tilde{\mathbf{x}}$. Furthermore, according to equation \ref{11}, $\tilde{\mathbf{z}}$ maximize $f(\tilde{\mathbf{x}}, \mathbf{z})$ over $\mathbf{z}$. Therefore, we can conclude that the infimum of $f(\mathbf{x}, \mathbf{z})$ is smaller than or equal to $f(\tilde{\mathbf{x}}, \mathbf{z})$, which has the maximum value $f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$.This conclusion is the same as:
+\begin{equation*}
+	\displaystyle\sup_{\mathbf{z}}\inf_{\mathbf{x}} = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})
+\end{equation*}
+The similar method can be used to prove:
+\begin{equation*}
+	\displaystyle\inf_{\mathbf{x}}\sup_{\mathbf{z}} = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})
+\end{equation*}
+Hence, $\displaystyle\sup_{\mathbf{z}}\inf_{\mathbf{x}} = \displaystyle\inf_{\mathbf{x}}\sup_{\mathbf{z}} = f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$
 
 \subsection*{(c)}
 We firstly fix $\mathbf{x} = \tilde{\mathbf{x}}$. According to $f(\tilde{\mathbf{x}}, \mathbf{z}) \leq f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$, $f(\tilde{\mathbf{x}}, \tilde{\mathbf{z}})$ is the maximum value of function $f(\tilde{\mathbf{x}}, \mathbf{z})$ over $\mathbf{z}$. Hence, there is:
@@ -353,5 +362,7 @@ This function is neither convex nor concave. However, this function is both quas
 This function is convex and quasi-convex but not concave and quasi-concave.
 \subsection*{(f)}
 This function is concave and quasi-concave but not convex and quasi-convex.
+
+\section*{Question 7}
 
 \end{document}

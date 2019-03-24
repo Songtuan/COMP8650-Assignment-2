@@ -364,5 +364,30 @@ This function is convex and quasi-convex but not concave and quasi-concave.
 This function is concave and quasi-concave but not convex and quasi-convex.
 
 \section*{Question 7}
+\subsection*{(a)}
+The conjugate function of $f(\mathbf{x})$ is:
+\begin{equation*}
+	f^{*}(\mathbf{y}) = 
+	\begin{cases}
+		0 \quad \textit{if } \mathbf{1}^{T} \mathbf{y} = 1 \textit{ and } \mathbf{y} \succeq 0  \\
+		\infty \quad \textit{otherwise}
+	\end{cases}
+\end{equation*}
+Firstly, we verify the domain: $\textbf{dom}f^{*}(\mathbf{y})$ is $\mathbf{y} \succeq 0$ and $\mathbf{1}^{T} \mathbf{y} = 1$: if $y_{k}$ within $\mathbf{y}$ is negative, then, for $\mathbf{x}$ that satisfied: $x_{k} \rightarrow \infty$ and $x_{i} = 0$ for any $i \neq k$, there is:
+\begin{equation*}
+	\mathbf{y}^{T} \mathbf{x} - max(\mathbf{x}) \rightarrow -\infty
+\end{equation*}
+Hence, $\mathbf{y}$ with negative components is not in the $\textbf{dom}f^{*}$. Then, we prove when $\mathbf{1}^{T} \mathbf{y} \neq 1$, $\mathbf{y}$ is not in the domain of $f^{*}$. This can be easily verified by setting $n = 1$: Assume $y = q > 1$, we have $f^{*}(q) = \displaystyle\sup_{x}(q - 1)x$, which goes to infinity when $x \rightarrow \infty$. Besides, when $y = p < 1$, $f^{*}(p)$ goes to infinity when $x \rightarrow -\infty$. As a result, $y$ must equal to 1.
+
+When $\mathbf{1}^{T} \mathbf{y} = 1$ and $\mathbf{y} \succeq 0$, $\mathbf{y}^{T} \mathbf{x}$ is the convex combination of elements within $\mathbf{x}$. Hence, $max(\mathbf{y}^{T} \mathbf{x}) = max(\mathbf{x})$, which means:
+\begin{equation*}
+	\displaystyle\sup_{\mathbf{x}}(\mathbf{y}^{T} \mathbf{x} - max(\mathbf{x})) = 0
+\end{equation*} 
+\subsection*{(b)}
+As what we do in (a), we firstly define the domain of $f^{*}(\mathbf{y})$. Assume there is negative component $y_{i} < 0$ within $\mathbf{y}$. For such $\mathbf{y}$, we can find a $\mathbf{x}$, in which $x_{i} = t$ and $x_{j} = 0$ when $i \neq j$. As a result, the conjugate function become:
+\begin{equation*}
+	f^{*}(\mathbf{y}) = \displaystyle\sup_{\mathbf{x}}(y_{i} x_{i} - x_{i})
+\end{equation*}
+Which goes to infinity when $t \rightarrow \infty$. As a result, $\mathbf{y} \succeq 0$. Furthermore
 
 \end{document}
